@@ -1,0 +1,5 @@
+import { programs } from "../../data/siteData";
+import SectionHeading from "../ui/SectionHeading";
+
+const Programs = () => <section id="programs" className="bg-navy py-20 text-white sm:py-28"><div className="mx-auto max-w-7xl px-5 sm:px-8"><SectionHeading light eyebrow="PLAYER DEVELOPMENT" title="A program for every future player." description="Perjalanan yang relevan pada setiap umur, kemampuan, dan ambisi." /><div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{programs.map((program, index) => <article key={program.age} className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6"><span className={`absolute left-0 top-0 h-1 w-full ${program.color}`} /><p className="text-sm font-bold text-blue-300">{String(index + 1).padStart(2, "0")} · {program.age}</p><h3 className="mt-10 font-display text-2xl font-bold">{program.name}</h3><p className="mt-3 text-sm leading-6 text-slate-300">{program.text}</p></article>)}</div></div></section>;
+export default Programs;

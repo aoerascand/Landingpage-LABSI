@@ -1,0 +1,5 @@
+import { pillars } from "../../data/siteData";
+import SectionHeading from "../ui/SectionHeading";
+
+const VisionMission = () => <section className="bg-slate-50 py-20 sm:py-28"><div className="mx-auto max-w-7xl px-5 sm:px-8"><div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr]"><div><SectionHeading eyebrow="OUR PURPOSE" title="A vision beyond the game." description="Building Future Players. Growing Stronger Communities." /><p className="mt-7 text-sm leading-7 text-slate-600">Kami percaya padel adalah tempat untuk bertumbuh—sebagai pemain, keluarga, dan komunitas. Setiap program LABSI dibuat untuk meninggalkan dampak yang lebih panjang dari satu pertandingan.</p></div><div className="grid gap-4 sm:grid-cols-2">{pillars.map(({ title, text, icon: Icon }) => <article key={title} className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60"><Icon className="text-3xl text-labsi-orange" /><h3 className="mt-8 font-display text-xl font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-500">{text}</p></article>)}</div></div></div></section>;
+export default VisionMission;
