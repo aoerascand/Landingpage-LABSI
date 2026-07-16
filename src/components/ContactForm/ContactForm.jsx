@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { HiDocumentArrowUp } from "react-icons/hi2";
 import { registrationFields } from "../../data/siteData";
@@ -16,17 +16,24 @@ const fileToBase64 = (file) =>
     reader.readAsDataURL(file);
   });
 
-const ContactForm = () => {
+const ContactForm = ({ selectedBranch }) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
     watch,
+    setValue,
   } = useForm();
 
   const [status, setStatus] = useState({ type: "", message: "" });
   const selectedFile = watch("familyCard")?.[0];
+
+  useEffect(() => {
+    if (selectedBranch) {
+      setValue("branch", selectedBranch);
+    }
+  }, [selectedBranch, setValue]);
 
   const onSubmit = async (data) => {
     setStatus({ type: "", message: "" });
@@ -114,15 +121,31 @@ const ContactForm = () => {
                 <span className="mb-2 block text-xs font-bold text-slate-600">
                   {field.label}
                 </span>
-                <input
-                  type={field.type}
-                  min={field.min}
-                  max={field.max}
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-labsi-blue focus:ring-2 focus:ring-blue-100"
-                  {...register(field.name, {
-                    required: `${field.label} wajib diisi`,
-                  })}
-                />
+                {field.type === "select" ? (
+                  <select
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-labsi-blue focus:ring-2 focus:ring-blue-100 bg-white"
+                    {...register(field.name, {
+                      required: `${field.label} wajib diisi`,
+                    })}
+                  >
+                    <option value="">Pilih Cabang Latihan</option>
+                    {field.options.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={field.type}
+                    min={field.min}
+                    max={field.max}
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-labsi-blue focus:ring-2 focus:ring-blue-100"
+                    {...register(field.name, {
+                      required: `${field.label} wajib diisi`,
+                    })}
+                  />
+                )}
                 {errors[field.name] && (
                   <span className="mt-1 block text-xs text-red-600">
                     {errors[field.name].message}

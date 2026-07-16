@@ -1,0 +1,38 @@
+export const academyNetwork = [
+  {
+    id: 1,
+    name: "LABSI x The Padel Side",
+    location: "Condet, Jakarta Timur",
+    status: "NOW OPEN",
+    badge: "Join Operation",
+    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=600&q=80",
+    buttonText: "Lihat Program",
+  },
+  {
+    id: 2,
+    name: "LABSI x Backyard",
+    location: "Kemang, Jakarta Selatan",
+    status: "COMING SOON",
+    badge: "Franchise Partner",
+    image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=600&q=80",
+    buttonText: "Coming Soon",
+  },
+  {
+    id: 3,
+    name: "LABSI x ...",
+    location: "...",
+    status: "COMING SOON",
+    badge: "Join Operation",
+    image: "https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?auto=format&fit=crop&w=600&q=80",
+    buttonText: "Coming Soon",
+  },
+  {
+    id: 4,
+    name: "LABSI x ...",
+    location: "...",
+    status: "OPENING 2026",
+    badge: "Future Academy",
+    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80",
+    buttonText: "Coming Soon",
+  },
+];

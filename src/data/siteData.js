@@ -47,7 +47,10 @@ export const programs = [
   { age: "U15–U25", name: "High Performance", text: "Fokus persiapan turnamen kompetitif, fisik atletis maksimal, taktik mendalam, dan pengembangan potensi elite.", color: "bg-violet-500" },
 ];
 
-export const partnerships = [];
+export const partnerships = [
+  { title: "Join Operation", subtitle: "Managed by LABSI", split: ["LABSI 70%", "Partner 30%"], description: "LABSI menjalankan standard academy, team, program, dan activation bersama venue Anda.", featured: true },
+  { title: "Franchise Partnership", subtitle: "Operated by Partner", split: ["LABSI 30%", "Partner 70%"], description: "Venue menjalankan operasi harian dengan playbook, curriculum, dan brand support dari LABSI.", featured: false },
+];
 
 export const benefits = [
   { title: "Fisik Aktif & Sehat", icon: FaChartLine },
@@ -59,11 +62,11 @@ export const benefits = [
 ];
 
 export const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=85", alt: "Padel court" },
-  { src: "https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?auto=format&fit=crop&w=900&q=85", alt: "Athlete training" },
-  { src: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=900&q=85", alt: "Sport team" },
-  { src: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=900&q=85", alt: "Training session" },
-  { src: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85", alt: "Community sport" },
+  { src: "public/images/Gallery-1.jpeg", alt: "Training session" },
+  { src: "public/images/Gallery-2.jpeg", alt: "Training session" },
+  { src: "public/images/Gallery-3.jpeg", alt: "Training session" },
+  { src: "public/images/Gallery-4.jpeg", alt: "Training session" },
+  // { src: "public/images/Gallery-5.jpeg", alt: "Training session" },
 ];
 
 export const faqs = [
@@ -79,6 +82,7 @@ export const contactInfo = { email: "academy@labsipadel.com", address: "Jakarta,
 export const registrationFields = [
   { name: "name", label: "Nama Anak", type: "text" },
   { name: "age", label: "Umur", type: "number", min: 3, max: 25 },
+  { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x Condet Padel Club", "LABSI x Kemang Padel Club", "LABSI x BSD", "LABSI x Bandung"] },
   { name: "address", label: "Alamat", type: "text", fullWidth: true },
   { name: "email", label: "Email Orang Tua", type: "email" },
   { name: "phone", label: "No. Telepon / WhatsApp", type: "tel" },
