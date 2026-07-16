@@ -11,6 +11,7 @@
 
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: #f7f9fc; color: #081B33; }
+section[id] { scroll-margin-top: 6rem; }
 * { box-sizing: border-box; }
 button, a { -webkit-tap-highlight-color: transparent; }
 ::selection { background: #1269e8; color: white; }
