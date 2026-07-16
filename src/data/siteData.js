@@ -62,10 +62,10 @@ export const benefits = [
 ];
 
 export const galleryImages = [
-  { src: "public/images/Gallery-1.jpeg", alt: "Training session" },
-  { src: "public/images/Gallery-2.jpeg", alt: "Training session" },
-  { src: "public/images/Gallery-3.jpeg", alt: "Training session" },
-  { src: "public/images/Gallery-4.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-1.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-2.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-3.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-4.jpeg", alt: "Training session" },
   // { src: "public/images/Gallery-5.jpeg", alt: "Training session" },
 ];
 
