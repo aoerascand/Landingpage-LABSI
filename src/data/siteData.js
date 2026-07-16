@@ -82,7 +82,7 @@ export const contactInfo = { email: "academy@labsipadel.com", address: "Jakarta,
 export const registrationFields = [
   { name: "name", label: "Nama Anak", type: "text" },
   { name: "age", label: "Umur", type: "number", min: 3, max: 25 },
-  { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x Condet Padel Club", "LABSI x Kemang Padel Club", "LABSI x BSD", "LABSI x Bandung"] },
+  { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x ThePadelSide(Condet)", "LABSI x Backyard(Kemang)"] },
   { name: "address", label: "Alamat", type: "text", fullWidth: true },
   { name: "email", label: "Email Orang Tua", type: "email" },
   { name: "phone", label: "No. Telepon / WhatsApp", type: "tel" },
