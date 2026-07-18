@@ -110,7 +110,7 @@ const NetworkSection = ({ setSelectedBranch }) => {
           </p>
           <div className="mt-8">
             <a
-              href="#contact"
+              href="#admin-contact"
               className="inline-flex items-center justify-center rounded-full bg-navy px-8 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 shadow-md"
             >
               Become Our Partner

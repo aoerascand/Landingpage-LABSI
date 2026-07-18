@@ -6,6 +6,7 @@ import { navLinks } from "../../data/siteData";
 const linkToId = (label) => {
   const normalized = label.toLowerCase();
   if (normalized === "about") return "#vision";
+  if (normalized === "contact") return "#admin-contact";
   return `#${normalized}`;
 };
 

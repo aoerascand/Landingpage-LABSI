@@ -77,12 +77,12 @@ export const faqs = [
   { question: "Apakah ada evaluasi perkembangan untuk anak?", answer: "Ya, pelatih kami memberikan Progress Report secara berkala kepada orang tua di setiap akhir periode program untuk memantau perkembangan fisik, motorik, dan teknik bermain anak." },
 ];
 
-export const contactInfo = { email: "academy@labsipadel.com", address: "Jakarta, Indonesia", instagram: "@labsipadel", linkedin: "LABSI Padel School" };
+export const contactInfo = { email: "labsipadelschool@gmail.com", phone: "+62 851-9939-1115", address: "Jakarta, Indonesia" };
 
 export const registrationFields = [
   { name: "name", label: "Nama Anak", type: "text" },
   { name: "age", label: "Umur", type: "number", min: 3, max: 25 },
-  { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x ThePadelSide(Condet)", "LABSI x Backyard(Kemang)"] },
+  { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x ThePadelSide(Condet)", "LABSI x Backyard(Cilandak)"] },
   { name: "address", label: "Alamat", type: "text", fullWidth: true },
   { name: "email", label: "Email Orang Tua", type: "email" },
   { name: "phone", label: "No. Telepon / WhatsApp", type: "tel" },

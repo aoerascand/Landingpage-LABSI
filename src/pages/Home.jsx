@@ -5,6 +5,7 @@ import Gallery from "../components/Gallery/Gallery";
 import Hero from "../components/Hero/Hero";
 import NetworkSection from "../components/Network/NetworkSection";
 import Programs from "../components/Programs/Programs";
+import ContactAdmin from "../components/ContactAdmin/ContactAdmin";
 import VisionMission from "../components/VisionMission/VisionMission";
 import WhyLabsi from "../components/WhyLabsi/WhyLabsi";
 import MainLayout from "../layouts/MainLayout";
@@ -22,6 +23,7 @@ const Home = () => {
       <Programs />
       <Gallery />
       <FAQ />
+      <ContactAdmin />
     </MainLayout>
   );
 };
