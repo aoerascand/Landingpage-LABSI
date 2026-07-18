@@ -3,7 +3,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { HiBars3BottomRight, HiXMark } from "react-icons/hi2";
 import { navLinks } from "../../data/siteData";
 
-const linkToId = (label) => `#${label.toLowerCase()}`;
+const linkToId = (label) => {
+  const normalized = label.toLowerCase();
+  if (normalized === "about") return "#vision";
+  return `#${normalized}`;
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
