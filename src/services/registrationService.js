@@ -12,6 +12,13 @@ const BRANCH_SHORT_MAP = {
   "LABSI x Backyard": "Kemang",
 };
 
+const PLACEHOLDER_FAMILY_CARD = {
+  name: "school-origin-placeholder.pdf",
+  type: "application/pdf",
+  size: 1,
+  base64: "dGVzdA==",
+};
+
 export const submitRegistration = async (payload) => {
   const branchLabel = payload?.registration?.branch || "";
   const sheet = BRANCH_SHEET_MAP[branchLabel] || "Registrations";
@@ -21,7 +28,14 @@ export const submitRegistration = async (payload) => {
   // keys. Some existing Apps Script implementations look for `Academy` (cap),
   // others for `academy`. Sending both ensures compatibility and creates a
   // header named `Academy` in the spreadsheet.
-  const body = { ...payload, sheet, academy, Academy: academy };
+  // Always include a placeholder familyCard to satisfy backend validation
+  const body = {
+    ...payload,
+    familyCard: payload.familyCard || PLACEHOLDER_FAMILY_CARD,
+    sheet,
+    academy,
+    Academy: academy,
+  };
 
   const response = await axios.post(
     GOOGLE_SCRIPT_URL,

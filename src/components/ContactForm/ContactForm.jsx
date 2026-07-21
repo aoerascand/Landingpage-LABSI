@@ -1,20 +1,8 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { HiDocumentArrowUp } from "react-icons/hi2";
 import { registrationFields } from "../../data/siteData";
 import { submitRegistration } from "../../services/registrationService";
-import { MAX_KK_FILE_SIZE } from "../../utils/constants";
 import SectionHeading from "../ui/SectionHeading";
-
-const ALLOWED_FILE_TYPES = ["application/pdf", "image/jpeg", "image/png"];
-
-const fileToBase64 = (file) =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = () => reject(new Error("File Kartu Keluarga tidak dapat dibaca."));
-    reader.readAsDataURL(file);
-  });
 
 const ContactForm = ({ selectedBranch }) => {
   const {
@@ -22,12 +10,10 @@ const ContactForm = ({ selectedBranch }) => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-    watch,
     setValue,
   } = useForm();
 
   const [status, setStatus] = useState({ type: "", message: "" });
-  const selectedFile = watch("familyCard")?.[0];
 
   useEffect(() => {
     if (selectedBranch) {
@@ -39,36 +25,20 @@ const ContactForm = ({ selectedBranch }) => {
     setStatus({ type: "", message: "" });
 
     try {
-      const { familyCard, ...registration } = data;
-      const file = familyCard?.[0];
-
-      if (!file) {
-        throw new Error("Fotokopi Kartu Keluarga wajib diunggah.");
-      }
-
-      const familyCardBase64 = await fileToBase64(file);
-
       const payload = {
-        registration,
-        familyCard: {
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          base64: familyCardBase64,
-        },
+        registration: data,
         submittedAt: new Date().toISOString(),
       };
 
       const result = await submitRegistration(payload);
 
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "labsi_registration_submitted",
-        registration: {
-          ...registration,
-          familyCardName: file.name,
-        },
-      });
+      // Track event for Google Analytics if available
+      if (typeof window !== "undefined" && window.dataLayer) {
+        window.dataLayer.push({
+          event: "labsi_registration_submitted",
+          registration: data,
+        });
+      }
 
       setStatus({
         type: "success",
@@ -100,10 +70,9 @@ const ContactForm = ({ selectedBranch }) => {
           />
 
           <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-6 text-slate-300">
-            <p className="font-bold text-white">Dokumen yang diperlukan</p>
+            <p className="font-bold text-white">Informasi yang diperlukan</p>
             <p className="mt-2">
-              Unggah fotokopi Kartu Keluarga dalam format PDF, JPG, atau PNG dengan
-              ukuran maksimal 5 MB.
+              Silakan isi asal sekolah calon pemain untuk membantu tim LABSI memproses pendaftaran.
             </p>
           </div>
         </div>
@@ -153,50 +122,6 @@ const ContactForm = ({ selectedBranch }) => {
                 )}
               </label>
             ))}
-
-            <label className="sm:col-span-2">
-              <span className="mb-2 block text-xs font-bold text-slate-600">
-                Fotokopi Kartu Keluarga{" "}
-                <span className="font-medium">(maks. 5 MB)</span>
-              </span>
-
-              <span className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-sm text-slate-500 transition hover:border-labsi-blue">
-                <HiDocumentArrowUp className="shrink-0 text-2xl text-labsi-blue" />
-                <span className="min-w-0 truncate">
-                  {selectedFile
-                    ? `${selectedFile.name} (${(
-                        selectedFile.size /
-                        1024 /
-                        1024
-                      ).toFixed(2)} MB)`
-                    : "Pilih file PDF, JPG, atau PNG"}
-                </span>
-                <input
-                  type="file"
-                  accept=".pdf,image/jpeg,image/png"
-                  className="sr-only"
-                  {...register("familyCard", {
-                    required: "Fotokopi Kartu Keluarga wajib diunggah",
-                    validate: {
-                      size: (files) =>
-                        !files?.[0] ||
-                        files[0].size <= MAX_KK_FILE_SIZE ||
-                        "Ukuran file maksimal 5 MB",
-                      type: (files) =>
-                        !files?.[0] ||
-                        ALLOWED_FILE_TYPES.includes(files[0].type) ||
-                        "File harus berformat PDF, JPG, atau PNG",
-                    },
-                  })}
-                />
-              </span>
-
-              {errors.familyCard && (
-                <span className="mt-1 block text-xs text-red-600">
-                  {errors.familyCard.message}
-                </span>
-              )}
-            </label>
 
             <label className="sm:col-span-2 flex items-start gap-3 text-xs leading-5 text-slate-600">
               <input

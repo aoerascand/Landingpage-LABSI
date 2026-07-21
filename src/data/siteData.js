@@ -83,7 +83,8 @@ export const registrationFields = [
   { name: "name", label: "Nama Anak", type: "text" },
   { name: "age", label: "Umur", type: "number", min: 3, max: 25 },
   { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x ThePadelSide(Condet)", "LABSI x Backyard(Cilandak)"] },
-  { name: "address", label: "Alamat", type: "text", fullWidth: true },
+  { name: "address", label: "Alamat", type: "text" },
+  { name: "schoolOrigin", label: "Asal Sekolah", type: "text", fullWidth: true },
   { name: "email", label: "Email Orang Tua", type: "email" },
   { name: "phone", label: "No. Telepon / WhatsApp", type: "tel" },
 ];
