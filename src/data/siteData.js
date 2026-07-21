@@ -6,7 +6,7 @@ import { LuBadgeCheck, LuGraduationCap, LuMapPinned, LuShieldCheck } from "react
 export const navLinks = ["Home", "About", "Programs", "FAQ", "Contact"];
 
 export const heroContent = {
-  eyebrow: "LABSI JUNIOR PADEL ACADEMY",
+  eyebrow: "LABSI PADEL SCHOOL",
   title: ["Membentuk Pemain Masa Depan.", "Sekolah Padel Junior Terbaik."],
   description: "Program pelatihan padel terstruktur untuk anak-anak dan remaja (usia 5–25 tahun). Dapatkan trial class gratis untuk melatih motorik, karakter, dan keterampilan olahraga anak Anda bersama coach profesional.",
   video: "/videos/labsi-opening.mp4",
