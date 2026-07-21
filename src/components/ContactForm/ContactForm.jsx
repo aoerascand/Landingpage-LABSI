@@ -74,6 +74,11 @@ const ContactForm = ({ selectedBranch }) => {
             <p className="mt-2">
               Silakan isi asal sekolah calon pemain untuk membantu tim LABSI memproses pendaftaran.
             </p>
+            <p className="mt-3 font-semibold text-white">Sesi Latihan yang Tersedia:</p>
+            <ul className="mt-2 space-y-1 list-disc list-inside">
+              <li>Sesi Pagi: 08.00 - 10.00</li>
+              <li>Sesi Siang: 10.00 - 12.00</li>
+            </ul>
           </div>
         </div>
 
