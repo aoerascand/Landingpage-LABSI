@@ -62,11 +62,11 @@ export const benefits = [
 ];
 
 export const galleryImages = [
-  { src: "/images/Gallery-1.jpeg", alt: "Training session" },
-  { src: "/images/Gallery-2.jpeg", alt: "Training session" },
-  { src: "/images/Gallery-3.jpeg", alt: "Training session" },
-  { src: "/images/Gallery-4.jpeg", alt: "Training session" },
-  // { src: "public/images/Gallery-5.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-6.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-10.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-7.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-8.jpeg", alt: "Training session" },
+  { src: "/images/Gallery-9.jpeg", alt: "Training session" },
 ];
 
 export const faqs = [
