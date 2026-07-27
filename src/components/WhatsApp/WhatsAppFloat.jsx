@@ -1,7 +1,7 @@
 import "./WhatsAppFloat.css";
 
 const WhatsAppFloat = () => {
-  const phone = "6281599391115"; // ganti dengan nomor WhatsApp tujuan (format internasional tanpa +)
+  const phone = "6285199391115"; // ganti dengan nomor WhatsApp tujuan (format internasional tanpa +)
   const message = "Halo, saya ingin bertanya tentang Labsi.";
   const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
