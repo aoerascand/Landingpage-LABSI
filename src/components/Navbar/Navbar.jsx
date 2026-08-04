@@ -28,9 +28,17 @@ const Navbar = () => {
     setTimeout(() => scrollToSection(hash), 100);
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.location.reload();
+  };
+
   return <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/90 text-white backdrop-blur-xl">
     <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
-      <img src="/images/logo labsi putih.png" alt="LABSI Padel School" className="h-15 w-auto" />
+      <a href="/" onClick={handleLogoClick} aria-label="Refresh halaman" className="cursor-pointer">
+        <img src="/images/logo labsi putih.png" alt="LABSI Padel School" className="h-15 w-auto" />
+      </a>
       <div className="hidden items-center gap-7 lg:flex">{navLinks.map((item) => <a key={item} href={linkToId(item)} className="text-sm font-medium text-slate-300 transition hover:text-white">{item}</a>)}</div>
       <a href="#registration" className="hidden rounded-full bg-labsi-orange px-5 py-2.5 text-sm font-bold text-white transition hover:bg-orange-400 lg:inline-flex">Daftar Sekarang</a>
       <button type="button" className="grid size-10 place-items-center rounded-xl border border-white/15 text-xl lg:hidden" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <HiXMark /> : <HiBars3BottomRight />}</button>
