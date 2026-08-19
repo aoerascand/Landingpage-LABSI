@@ -44,4 +44,13 @@ export const academyNetwork = [
     image: "images/logo mpdl.jpg",
     buttonText: "Coming Soon",
   },
+  {
+    id: 6,
+    name: "LABSI x Pause Padel",
+    location: "Jagakarsa, Jakarta Selatan",
+    status: "COMING SOON",
+    badge: "Coming Soon",
+    image: "images/logo pausepadel.jpg",
+    buttonText: "Coming Soon",  
+  },
 ];
