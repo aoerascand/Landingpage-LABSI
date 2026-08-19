@@ -35,4 +35,13 @@ export const academyNetwork = [
     image: "images/LOGO ZETA.jpg",
     buttonText: "Coming Soon",
   },
+  {
+    id: 5,
+    name: "LABSI x M Padl",
+    location: "Lenteng Agung, Jakarta Selatan",
+    status: "COMING SOON",
+    badge: "Coming Soon",
+    image: "images/logo mpdl.jpg",
+    buttonText: "Coming Soon",
+  },
 ];
