@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { LuMapPin } from "react-icons/lu";
 import { academyNetwork } from "../../data/networkData";
@@ -9,20 +10,56 @@ const statusColors = {
   "OPENING 2026": "bg-blue-500/10 text-blue-600 border border-blue-500/20",
 };
 
+const venueFilters = [
+  { value: "NOW OPEN", label: "Sudah berjalan" },
+  { value: "ALL", label: "Semua venue" },
+  { value: "COMING SOON", label: "Segera hadir" },
+];
+
 const NetworkSection = ({ setSelectedBranch }) => {
+  const [activeFilter, setActiveFilter] = useState("NOW OPEN");
+  const visibleVenues = activeFilter === "ALL"
+    ? academyNetwork
+    : academyNetwork.filter((academy) => academy.status === activeFilter);
+
   return (
-    <section id="network" className="bg-slate-50 py-20 sm:py-28">
+    <section id="venue" className="bg-slate-50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           centered
-          eyebrow="GROWING TOGETHER ACROSS INDONESIA"
-          title="Bangun masa depan padel bersama LABSI."
-          description="LABSI Padel School hadir sebagai academy partner yang bekerja sama dengan berbagai venue melalui sistem Join Operation maupun Franchise untuk menghadirkan standar pembinaan yang profesional, kurikulum yang terstruktur, dan komunitas yang terus berkembang."
+          eyebrow="VENUE LABSI PADEL SCHOOL"
+          title="Temukan venue latihan LABSI."
+          description="Cek venue LABSI yang sudah berjalan dan pilih lokasi latihan yang paling dekat dengan Anda."
         />
 
-        {/* Responsive Grid */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {academyNetwork.map((academy, index) => {
+        <div className="mt-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Filter venue">
+          {venueFilters.map((filter) => {
+            const count = filter.value === "ALL"
+              ? academyNetwork.length
+              : academyNetwork.filter((academy) => academy.status === filter.value).length;
+            const isActive = activeFilter === filter.value;
+
+            return (
+              <button
+                key={filter.value}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveFilter(filter.value)}
+                className={`rounded-full border px-4 py-2 text-sm font-bold transition ${
+                  isActive
+                    ? "border-navy bg-navy text-white"
+                    : "border-slate-200 bg-white text-slate-600 hover:border-labsi-blue hover:text-labsi-blue"
+                }`}
+              >
+                {filter.label} ({count})
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {visibleVenues.map((academy, index) => {
             const isNowOpen = academy.status === "NOW OPEN";
             return (
               <motion.article

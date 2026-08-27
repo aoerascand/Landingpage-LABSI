@@ -3,7 +3,7 @@ import { GiTennisRacket } from "react-icons/gi";
 import { HiAcademicCap, HiOutlineLightBulb, HiOutlineUserGroup } from "react-icons/hi2";
 import { LuBadgeCheck, LuGraduationCap, LuMapPinned, LuShieldCheck } from "react-icons/lu";
 
-export const navLinks = ["Home", "About", "Programs", "FAQ", "Contact"];
+export const navLinks = ["Home", "About", "Venue", "Programs", "FAQ", "Contact"];
 
 export const heroContent = {
   eyebrow: "LABSI PADEL SCHOOL",
