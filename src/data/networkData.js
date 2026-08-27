@@ -39,10 +39,10 @@ export const academyNetwork = [
     id: 5,
     name: "LABSI x M Padl",
     location: "Lenteng Agung, Jakarta Selatan",
-    status: "COMING SOON",
-    badge: "Coming Soon",
+    status: "NOW OPEN",
+    badge: "-",
     image: "images/logo mpdl.jpg",
-    buttonText: "Coming Soon",
+    buttonText: "DAFTAR SEKARANG",
   },
   {
     id: 6,
