@@ -7,7 +7,7 @@ export const navLinks = ["Home", "About", "Venue", "Programs", "FAQ", "Contact"]
 
 export const heroContent = {
   eyebrow: "LABSI PADEL SCHOOL",
-  highlight: "Backyard is open — ayo trial sekarang!",
+  highlight: "JOIN NOW!",
   title: ["Membentuk Pemain Masa Depan.", "Sekolah Padel Junior Terbaik."],
   description: "Program pelatihan padel terstruktur untuk anak-anak dan remaja (usia 5–25 tahun). Dapatkan trial class gratis untuk melatih motorik, karakter, dan keterampilan olahraga anak Anda bersama coach profesional.",
   video: "/videos/labsi-opening.mp4",
@@ -66,8 +66,9 @@ export const galleryImages = [
   { src: "/images/Gallery-6.jpeg", alt: "Training session" },
   { src: "/images/Gallery-10.jpeg", alt: "Training session" },
   { src: "/images/Gallery-7.jpeg", alt: "Training session" },
-  { src: "/images/Gallery-8.jpeg", alt: "Training session" },
+  { src: "/images/backyard all.jpeg", alt: "Training session" },
   { src: "/images/Gallery-9.jpeg", alt: "Training session" },
+  { src: "/images/mpadl all.jpeg", alt: "Training session" },
 ];
 
 export const faqs = [
