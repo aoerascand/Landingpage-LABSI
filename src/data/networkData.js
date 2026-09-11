@@ -53,4 +53,13 @@ export const academyNetwork = [
     image: "images/logo pausepadel.jpg",
     buttonText: "Coming Soon",  
   },
+  {
+    id: 7,
+    name: "LABSI x ALUX PADEL",
+    location: "Cilandak, Jakarta Selatan",
+    status: "COMING SOON",
+    badge: "Coming Soon",
+    image: "images/logo alux padel.jpg",
+    buttonText: "Coming Soon",
+  },
 ];
