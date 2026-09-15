@@ -57,9 +57,9 @@ export const academyNetwork = [
     id: 7,
     name: "LABSI x ALUX PADEL",
     location: "Cilandak, Jakarta Selatan",
-    status: "COMING SOON",
-    badge: "Coming Soon",
+    status: "NOW OPEN",
+    badge: "Franchise",
     image: "images/logo alux padel.jpg",
-    buttonText: "Coming Soon",
+    buttonText: "Daftar TRIAL CLASS ",
   },
 ];
