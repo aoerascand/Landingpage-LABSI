@@ -10,7 +10,7 @@ export const heroContent = {
   highlight: "JOIN NOW!",
   title: ["Membentuk Pemain Masa Depan.", "Sekolah Padel Junior Terbaik."],
   description: "Program pelatihan padel terstruktur untuk anak-anak dan remaja (usia 5–25 tahun). Dapatkan trial class gratis untuk melatih motorik, karakter, dan keterampilan olahraga anak Anda bersama coach profesional.",
-  video: "/videos/20260916_LABSI_COACH_GATHERING.mp4",
+  video: "/videos/labsi-opening.mp4",
   poster: "https://images.unsplash.com/photo-1617083934555-ac7b25c9f73d?auto=format&fit=crop&w=1600&q=85",
 };
 
