@@ -10,7 +10,7 @@ export const heroContent = {
   highlight: "JOIN NOW!",
   title: ["Membentuk Pemain Masa Depan.", "Sekolah Padel Junior Terbaik."],
   description: "Program pelatihan padel terstruktur untuk anak-anak dan remaja (usia 5–25 tahun). Dapatkan trial class gratis untuk melatih motorik, karakter, dan keterampilan olahraga anak Anda bersama coach profesional.",
-  video: "/videos/labsi-opening.mp4",
+  video: "/videos/20260916_LABSI_COACH_GATHERING.mp4",
   poster: "https://images.unsplash.com/photo-1617083934555-ac7b25c9f73d?auto=format&fit=crop&w=1600&q=85",
 };
 
@@ -84,8 +84,13 @@ export const contactInfo = { email: "labsipadelschool@gmail.com", phone: "+62 85
 export const registrationFields = [
   { name: "name", label: "Nama Anak", type: "text" },
   { name: "age", label: "Umur", type: "number", min: 3, max: 25 },
-  { name: "branch", label: "Cabang Latihan", type: "select", options: ["LABSI x ThePadelSide(Condet)", 
-    "LABSI x Backyard(Jeruk Purut)", "LABSI x M Padl(Lenteng Agung)", "LABSI x Alux Padel(Cilandak Town Square)"] },
+  { name: "branch", label: "Cabang Latihan", type: "select",
+     options:[
+    "LABSI x ThePadelSide(Condet)", 
+    "LABSI x Backyard(Jeruk Purut)",
+    "LABSI x M Padl(Lenteng Agung)", 
+    "LABSI x Alux Padel(Cilandak Town Square)"
+  ] },
   { name: "address", label: "Alamat", type: "text" },
   { name: "schoolOrigin", label: "Asal Sekolah", type: "text", fullWidth: true },
   { name: "email", label: "Email Orang Tua", type: "email" },
